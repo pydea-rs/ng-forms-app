@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@font-face {
+    font-family: 'Vazir-Bold';
+    src: url('./assets/fonts/Vazir-Bold.eot') format("eot"), url('./assets/fonts/Vazir-Bold.ttf') format("truetype"), url('./assets/fonts/Vazir-Bold.woff') format("woff"), url('./assets/fonts/Vazir-Bold.woff2') format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    direction: rtl;
+    font-family: 'Vazir-Bold' !important;
+}
