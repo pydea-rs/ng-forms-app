@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'forms-app';
-  clientPathPrefix = "/ng-forms-app"  // change this
+  clientPathPrefix = ""  // change this
 
   constructor(private router: Router) {}
 

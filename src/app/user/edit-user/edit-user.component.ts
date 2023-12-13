@@ -106,6 +106,7 @@ export class EditUserComponent implements OnInit {
     this.response = { success: '', error: '', warning: '' };
   }
 
-  getUsersRoute = () => this.service.clientPathPrefix + "/users";
-
+  redirectToUsers():void{
+    this.router.navigate([this.service.clientPathPrefix + "/users"]);
+  }
 }
