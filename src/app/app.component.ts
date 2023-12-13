@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   getNewUserLinkClassName(): string {
-    return this.router.url === '/new' ? 'nav-link active' : 'nav-link';
+    return this.router.url.includes('/new') ? 'nav-link active' : 'nav-link';
   }
 
   getUsersLinkClassName(): string {
