@@ -1,3 +1,4 @@
+import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,8 +12,10 @@ export class NewUserComponent implements OnInit {
   phonenumber: string = '';
   email: string = '';
   password: string = '';
+  succcessResponse: string = '';
+  errorResponse: string = '';
 
-  constructor() {}
+  constructor(private service: ApiService) {}
 
   ngOnInit(): void {}
 
@@ -41,8 +44,39 @@ export class NewUserComponent implements OnInit {
   }
 
   resetInput(): void {
-    this.firstname = this.lastname = this.email = this.phonenumber = this.password = '';
+    this.firstname =
+      this.lastname =
+      this.email =
+      this.phonenumber =
+      this.password =
+        '';
   }
 
+  createUser(): void {
+    this.succcessResponse = this.errorResponse = '';
+    this.service
+      .createUser({
+        fname: this.firstname,
+        lname: this.lastname,
+        phone: this.phonenumber,
+        password: this.password,
+        email: this.email,
+      })
+      .subscribe(
+        (response) => {
+          if(response.status === 200)
+            this.succcessResponse = 'کاربر با موفقیت ثبت شد.';
+          else this.errorResponse = 'مشکلی غیر منتظره پیش آمد لطفا دوباره تلاش کنید.'
+        },
+        (error) => {
+          const {status} = error.status;
+          this.errorResponse = 'خطایی حین قبت اطلاعات پیش آمد. لطفا داده های ورودی بخصوص شماره تلفن و ایمیل را بررسی و به درستی وارد کنید!';
+          console.error('Error in POST request:', error);
+        }
+      );
+  }
 
+  getMessage(): string {
+    return this.errorResponse ? this.errorResponse : this.succcessResponse ? this.succcessResponse : '';
+  }
 }

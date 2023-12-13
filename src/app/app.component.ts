@@ -16,6 +16,6 @@ export class AppComponent {
   }
 
   getUsersLinkClassName(): string {
-    return this.router.url === '/users' ? 'nav-link active' : 'nav-link';
+    return this.router.url.includes('/users') ? 'nav-link active' : 'nav-link';
   }
 }
