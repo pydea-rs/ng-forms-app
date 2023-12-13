@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'users/:id', component: EditUserComponent },
 
-  // { path: '', redirectTo: '/new', pathMatch: 'full' },
+  { path: '', redirectTo: '/new', pathMatch: 'full' },
   // { path: 'ng-forms-app', redirectTo: '/ng-forms-app/new', pathMatch: 'full' },
 
 ];
