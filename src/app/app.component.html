@@ -6,14 +6,14 @@
       aria-orientation="vertical"
     >
       <a
-        routerLink="/new"
+        [routerLink]="getCreateUserRoute()"
         [class]="getNewUserLinkClassName()"
         id="v-pills-newuser-tab"
       >
         کاربر جدید
       </a>
       <a
-        routerLink="/users"
+        [routerLink]="getUsersRoute()"
         [class]="getUsersLinkClassName()"
         id="v-pills-users-tab"
       >

@@ -41,6 +41,6 @@ export class UsersComponent implements OnInit {
 
   onUserClick(user_id: number) {
     console.log("clicked", user_id);
-    this.router.navigate([`/users/${user_id}`]);
+    this.router.navigate([`${this.service.clientPathPrefix}/users/${user_id}`]);
   }
 }

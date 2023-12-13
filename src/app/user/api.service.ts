@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   private root: string = 'https://interview-api.amerandish.com';
+  clientPathPrefix = '/ng-forms-app'  //change this
+
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any> {

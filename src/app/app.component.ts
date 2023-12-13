@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'forms-app';
+  clientPathPrefix = "/ng-forms-app"  // change this
 
   constructor(private router: Router) {}
 
@@ -18,4 +19,7 @@ export class AppComponent {
   getUsersLinkClassName(): string {
     return this.router.url.includes('/users') ? 'nav-link active' : 'nav-link';
   }
+
+  getUsersRoute = () => this.clientPathPrefix + "/users";
+  getCreateUserRoute = () => this.clientPathPrefix + "/new";
 }

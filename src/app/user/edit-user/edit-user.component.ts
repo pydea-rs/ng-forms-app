@@ -17,7 +17,8 @@ export class EditUserComponent implements OnInit {
     password: '',
   };
   response = { success: '', error: '', warning: '' };
-  constructor(private service: ApiService, private router: Router) {}
+
+  constructor(private service: ApiService, private router: Router) {  }
 
   ngOnInit(): void {
     this.response.warning = 'لطفا تا بارگذاری اطلاعات منتظر بمانید...';
@@ -104,4 +105,7 @@ export class EditUserComponent implements OnInit {
   resetResponse(): void {
     this.response = { success: '', error: '', warning: '' };
   }
+
+  getUsersRoute = () => this.service.clientPathPrefix + "/users";
+
 }
