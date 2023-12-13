@@ -14,7 +14,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     if(!this.router.url.includes('/new') && !this.router.url.includes('/users'))
-      this.router.navigate([this.clientPathPrefix + '/new'])
+      this.router.navigate([this.getCreateUserRoute()]);
   }
   getNewUserLinkClassName(): string {
     return this.router.url.includes('/new') ? 'nav-link active' : 'nav-link';
